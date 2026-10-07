@@ -1,26 +1,29 @@
 # Adenylate Kinase: Dual-Basin Coarse-Grained Model of a Conformational Transition
 
 A structure-based (Gō-like), Cα-resolution model of Adenylate Kinase (AKE) built to
-study its large-scale open ↔ closed conformational transition — the classic
-NMP/LID/CORE domain motion that couples substrate binding to catalysis.
+study the conformational differences between the open (4AKE) and closed (1AKE)
+end states and to provide a dual-basin model for exploring the associated
+NMP/LID/CORE domain motion.
 
 ## Approach
 
 - **Contact map construction** — native contacts extracted separately from the
   open (4AKE) and closed (1AKE) crystal structures.
 - **Dual-basin ("microscopic mixing") potential** — native contacts from both
-  end-states are combined into a single structure-based Hamiltonian, so the
-  model can access both conformations rather than being biased toward one.
+  end-states are combined into a single structure-based Hamiltonian, providing
+  interactions associated with both reference conformations.
 - **Coarse-grained simulation** — Cα-only Langevin dynamics run in OpenMM,
-  parametrized from the merged contact map.
-- **Analysis** — RMSD and fraction-of-native-contacts (Q) relative to each
-  end-state; domain-based collective coordinates (center-of-mass distances
-  between the NMP, LID, and CORE domains); free-energy landscape along these
-  coordinates via PyEMMA.
+  parametrized from the mixed contact map. The stored trajectory is a 100 ns
+  simulation initiated from the 4AKE (open) structure at the model temperature
+  of 80 K.
+- **Analysis** — trajectory RMSD/Q analysis and domain-based collective
+  coordinates (center-of-mass distances between the NMP, LID, and CORE domains);
+  a PyEMMA free-energy representation is constructed along the selected
+  collective coordinates.
 
 ## Repository structure
 
-```
+```text
 notebooks/
   01_contact_map_creation.ipynb   – builds native-contact maps for 1AKE and 4AKE
   02_build_and_simulate.ipynb     – merges contact maps, builds the CG system, runs the simulation
@@ -40,7 +43,11 @@ Adenylate Kinase is a well-studied benchmark for coarse-grained modeling of
 large conformational changes: its LID and NMP domains close over the CORE
 domain upon substrate binding, and the open (4AKE) and closed (1AKE) crystal
 structures are commonly used as reference end-states for structure-based
-models of this transition.
+models. In this repository, the dual-basin potential is constructed from both
+end states, while the stored production trajectory is initiated from 4AKE;
+the trajectory therefore demonstrates the behavior of that simulation rather
+than by itself constituting a demonstration of repeated open ↔ closed
+transitions.
 
 ## Tools
 
