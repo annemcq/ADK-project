@@ -37,7 +37,7 @@ results/
 
 ## Reproducing
 
-The notebooks are intended to be run in order using **Python 3.8.18** (see `.python-version`). The project depends on OpenMM, MDTraj and PyEMMA; PyEMMA is an older dependency and may not install cleanly on newer Python versions.
+The notebooks are intended to be run in order using **Python 3.8.18** (see `.python-version`). Install the packages listed in `requirements.txt` in a compatible environment (`python -m pip install -r requirements.txt`). The project depends on OpenMM, MDTraj and PyEMMA; PyEMMA is an older dependency and may not install cleanly on newer Python versions.
 
 1. `01_contact_map_creation.ipynb` — build the native-contact maps for the open and closed structures.
 2. `02_build_and_simulate.ipynb` — construct the dual-basin coarse-grained system and run the Langevin simulation.
@@ -64,3 +64,7 @@ transitions.
 ## Tools
 
 Python · OpenMM · MDTraj · PyEMMA · NumPy · Matplotlib
+
+## License and input provenance
+
+The original project code is distributed under the [MIT License](LICENSE). This license does **not** grant rights to third-party structures, instructor-provided SMOG inputs, or other externally sourced data, which remain subject to their respective terms. This was a collaborative two-person course project; ensure both contributors agree to publication of jointly authored code under the stated license.
