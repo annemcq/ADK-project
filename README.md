@@ -15,7 +15,7 @@ NMP/LID/CORE domain motion.
 - **Coarse-grained simulation** — Cα-only Langevin dynamics run in OpenMM,
   parametrized from the mixed contact map. The stored trajectory is a 100 ns
   simulation initiated from the 4AKE (open) structure at the model temperature
-  of 80 K.
+  of 80 K. This is a coarse-grained simulation parameter, not a physiological temperature.
 - **Analysis** — trajectory RMSD/Q analysis and domain-based collective
   coordinates (center-of-mass distances between the NMP, LID, and CORE domains);
   a PyEMMA free-energy representation is constructed along the selected
