@@ -35,6 +35,16 @@ results/
   distances/                      – inter-residue distance calculations
 ```
 
+## Reproducing
+
+The notebooks are intended to be run in order using **Python 3.8.18** (see `.python-version`). The project depends on OpenMM, MDTraj and PyEMMA; PyEMMA is an older dependency and may not install cleanly on newer Python versions.
+
+1. `01_contact_map_creation.ipynb` — build the native-contact maps for the open and closed structures.
+2. `02_build_and_simulate.ipynb` — construct the dual-basin coarse-grained system and run the Langevin simulation.
+3. `03_analysis.ipynb` — analyse RMSD/Q and domain-distance coordinates and generate the free-energy landscape.
+
+The stored trajectory and intermediate files allow the analysis stage to be inspected without rerunning the full simulation.
+
 ## Background
 
 Adenylate Kinase is a well-studied benchmark for coarse-grained modeling of
