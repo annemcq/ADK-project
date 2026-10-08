@@ -2,3 +2,23 @@
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
+# Local Python/Jupyter environments and caches
+.env
+.env.*
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Notebook execution helpers and logs (keep committed analysis outputs)
+nbconvert_debug.log
+run_analysis.py
+save_notebook_outputs.py
+notebooks/*_executed.ipynb
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
