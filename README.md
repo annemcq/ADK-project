@@ -34,6 +34,7 @@ data/
   system/                         – OpenMM system definition
 trajectories/                     – simulation output (full system and per-domain)
 results/
+  free_energy_landscape.png   – PyEMMA free-energy landscape from the domain-distance coordinates
   distances/                      – inter-residue distance calculations
 ```
 
