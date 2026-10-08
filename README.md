@@ -1,9 +1,6 @@
 # Adenylate Kinase: Dual-Basin Coarse-Grained Model of a Conformational Transition
 
-A two-person course project using instructor-provided SMOG-ready structures. I built a structure-based (Gō-like), Cα-resolution model of Adenylate Kinase (AKE) built to
-study the conformational differences between the open (4AKE) and closed (1AKE)
-end states and to provide a dual-basin model for exploring the associated
-NMP/LID/CORE domain motion.
+A two-person course project using instructor-provided SMOG-ready structures. My partner and I built a structure-based (Gō-like), Cα-resolution model of Adenylate Kinase (AKE) to study the conformational differences between the open (4AKE) and closed (1AKE) end states and to provide a dual-basin model for exploring the associated NMP/LID/CORE domain motion.
 
 ## Approach
 
