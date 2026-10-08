@@ -1,0 +1,9 @@
+# Analysis environment: Python 3.8.18 (see .python-version)
+# PyEMMA is unmaintained; use a compatible Python 3.8 environment.
+numpy<2
+matplotlib
+mdtraj
+openmm
+pyemma==2.5.12
+jupyter
+ipykernel
