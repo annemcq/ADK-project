@@ -47,9 +47,13 @@ The stored trajectory and intermediate files allow the analysis stage to be insp
 
 ### Conformational landscape
 
+Domain residue numbers are **1-based and inclusive** in the literature: NMP 30–59, LID 122–159, and CORE 1–29, 60–121, 160–214. Notebook 03 consistently converts these ranges to 0-based indexing for the Cα-only topology.
+
 ![Free-energy landscape of LID–CORE and NMP–CORE domain distances](results/free_energy_landscape.png)
 
-The stored trajectory explores repeated **LID closure**, rather than a complete open-to-closed transition. LID–CORE stays near 30 Å (4AKE reference: 30.7 Å) and visits a second basin around 22 Å (1AKE reference: 20.9 Å). Using 26 Å and 28 Å as crossing thresholds gives approximately 790 LID transitions. In contrast, NMP–CORE never drops below 20.6 Å, whereas the closed 1AKE structure is at 18.2 Å. The two domains therefore do not both reach their closed-state distances in this simulation. These are trajectory-based observations, not a count of full conformational transitions.
+*Figure provenance: this committed image was generated before correcting the 1-based to 0-based CORE domain selection in notebook 03. Re-run notebook 03 to regenerate the figure with the corrected CORE definition; do not interpret the current image as a recomputed result.*
+
+The stored trajectory explores repeated **LID closure**, rather than a complete open-to-closed transition. LID–CORE stays near 30 Å (4AKE reference: 30.8 Å) and visits a second basin around 22 Å (1AKE reference: 21.0 Å). Using 26 Å and 28 Å as crossing thresholds gives approximately **746** LID threshold crossings under the corrected CORE selection (previously 794). In contrast, the NMP–CORE distances range from **20.50 to 24.38 Å** under the corrected selection, whereas the closed 1AKE structure is at 18.2 Å. The two domains therefore do not both reach their closed-state distances in this simulation. These are trajectory-based observations, not a count of full conformational transitions.
 
 ## Background
 
