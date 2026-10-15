@@ -33,7 +33,7 @@ def main():
     core = residue_range(1, 29) + residue_range(60, 121) + residue_range(160, 214)
     assert len(core) == 146
     assert len(set(core) & (set(nmp) | set(lid))) == 0
-    assert len(traj.topology.atoms) == 214, "Expected one C-alpha bead per residue"
+    assert traj.n_atoms == 214, "Expected one C-alpha bead per residue"
     def com(ids):
         return md.compute_center_of_mass(traj.atom_slice(ids))
     c = com(core)
