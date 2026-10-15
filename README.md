@@ -43,6 +43,8 @@ The notebooks are intended to be run in order using **Python 3.8.18** (see `.pyt
 2. `02_build_and_simulate.ipynb` — construct the dual-basin coarse-grained system and run the Langevin simulation.
 3. `03_analysis.ipynb` — analyse RMSD/Q and domain-distance coordinates and generate the free-energy landscape.
 
+To regenerate the corrected committed figure without PyEMMA, install `mdtraj`, `numpy`, and `matplotlib` and run `python scripts/regenerate_landscape.py` from the repository root.
+
 The stored trajectory and intermediate files allow the analysis stage to be inspected without rerunning the full simulation.
 
 ### Conformational landscape
@@ -51,7 +53,7 @@ Domain residue numbers are **1-based and inclusive** in the literature: NMP 30�
 
 ![Free-energy landscape of LID–CORE and NMP–CORE domain distances](results/free_energy_landscape.png)
 
-*Figure provenance: this committed image was generated before correcting the 1-based to 0-based CORE domain selection in notebook 03. Re-run notebook 03 to regenerate the figure with the corrected CORE definition; do not interpret the current image as a recomputed result.*
+*Figure provenance: regenerated from the committed trajectory using the corrected 1-based to 0-based CORE selection. `scripts/regenerate_landscape.py` estimates the two-dimensional relative free energy as −ln(p/p_max) from a 100×100 histogram (in kBT units), independently of PyEMMA's plotting function. The underlying domain-distance coordinates match notebook 03; the rendering method differs from the original PyEMMA plot.*
 
 The stored trajectory explores repeated **LID closure**, rather than a complete open-to-closed transition. LID–CORE stays near 30 Å (4AKE reference: 30.8 Å) and visits a second basin around 22 Å (1AKE reference: 21.0 Å). Using 26 Å and 28 Å as crossing thresholds gives approximately **746** LID threshold crossings under the corrected CORE selection (previously 794). In contrast, the NMP–CORE distances range from **20.50 to 24.38 Å** under the corrected selection, whereas the closed 1AKE structure is at 18.2 Å. The two domains therefore do not both reach their closed-state distances in this simulation. These are trajectory-based observations, not a count of full conformational transitions.
 
